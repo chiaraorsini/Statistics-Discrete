@@ -4,7 +4,7 @@ Perl extension for statistical analyses of discrete data.
 
 ## Installation
 
-To install this module type the following:
+In order to install this module type the following:
 
 ```
    $ perl Makefile.PL
@@ -15,7 +15,7 @@ To install this module type the following:
    
 ## Dependencies
 
-This module does not requires other modules and libraries.
+This module does not require other modules and libraries.
 
 
 ## Copyright and License
