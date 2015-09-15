@@ -1,5 +1,8 @@
 Revision history for Perl extension Statistics::Discrete.
 
+0.05  Tue Sep 15 11:11:37 PDT 2015
+	- reactivated module on CPAN
+
 0.04  Thu Aug  7 11:13:17 PDT 2014
 	- fixed a bug in load data function
 

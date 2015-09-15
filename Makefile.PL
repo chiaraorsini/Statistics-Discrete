@@ -30,7 +30,7 @@ WriteMakefile(
     NAME              => 'Statistics::Discrete',
     VERSION_FROM      => 'lib/Statistics/Discrete.pm', 
     PREREQ_PM         => { 'List::Util' => 1.25,
-			   'Storable' => 2.45}, 
+			   'Storable' => 2.41}, 
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT  => 'Perl extension for statistical analyses of discrete data',
        AUTHOR         => 'Chiara Orsini <chiara@caida.org>') : ()),

@@ -33,7 +33,7 @@ use Storable 'dclone';
 
 
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use constant NO_BINNING   => 0;
 use constant LIN_BINNING  => 1;
