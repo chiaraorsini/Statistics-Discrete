@@ -54,9 +54,9 @@ as possible when multiple statistics are computed on the same set of data.
   my $ccdf = $sd->complementary_cumulative_distribution_function();
   
   # Binning
-  $sd->set_binning_type(NO_BINNING);
-  $sd->set_binning_type(LOG_BINNING);
-  $sd->set_binning_type(LIN_BINNING);
+  $sd->set_binning_type(Statistics::Discrete:NO_BINNING);
+  $sd->set_binning_type(Statistics::Discrete:LOG_BINNING);
+  $sd->set_binning_type(Statistics::Discrete:LIN_BINNING);
   $sd->set_optimal_binning();
   $sd->set_custom_num_bins(10);
   my $cur_bins = $sd->bins();
@@ -193,13 +193,13 @@ C<set_binning_type> sets the binning type associated with the current class and 
 the binning type for the distributions computed from this line on. C<$binning_type> can take
 one of the following values:
 
-Statistics::Discrete->NO_BINNING is the default case and it tells the class to return
+Statistics::Discrete::NO_BINNING is the default case and it tells the class to return
 non binned distributions.
 
-Statistics::Discrete->LIN_BINNING tells the class to return linearly binned distributions: i.e. the support is divided into equally spaced intervals. The default number of bins is 10, but
+Statistics::Discrete::LIN_BINNING tells the class to return linearly binned distributions: i.e. the support is divided into equally spaced intervals. The default number of bins is 10, but
 it can be changed using the function C<set_custom_num_bins( [$num_bins] )>.
 
-Statistics::Discrete->LOG_BINNING tells the class to return logarithmically binned distributions: i.e. the support is divided into intervals whose width grows logarithmically (e.g. 0.1, 1, 10, 100). There is no default number of bins, in the default case the optimal number of bins is
+Statistics::Discrete::LOG_BINNING tells the class to return logarithmically binned distributions: i.e. the support is divided into intervals whose width grows logarithmically (e.g. 0.1, 1, 10, 100). There is no default number of bins, in the default case the optimal number of bins is
 computed by the class itself: i.e. the number of bins chosen is the one that generates the sum of the resulting probability mass density closest to 1. 
 
 

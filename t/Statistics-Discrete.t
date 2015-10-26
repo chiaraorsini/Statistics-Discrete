@@ -34,6 +34,9 @@ use warnings;
 use Test::More;
 eval "use Test::Pod 1.00";
 
+use FindBin;                     # locate this script
+use lib "$FindBin::RealBin/../lib";  # use the parent directory
+
 BEGIN { use_ok('Statistics::Discrete') };
 
 
@@ -57,7 +60,6 @@ ok($s->minimum() == 1, "Statistics::Discrete->minimum()");
 ok($s->maximum() == 333, "Statistics::Discrete->maximum()");
 ok($s->median() == 4, "Statistics::Discrete->median()");
 ok(sprintf("%.1f",$s->variance()) eq "9739.8", "Statistics::Discrete->variance()");
-
 my $number_of_tests_run = 8;
 done_testing( $number_of_tests_run );
 
