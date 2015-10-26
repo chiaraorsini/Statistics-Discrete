@@ -30,7 +30,7 @@ use List::Util;
 use POSIX;
 use Storable 'dclone';
 
-our $VERSION = '0.05';
+our $VERSION = '0.05.00';
 
 # require Exporter;
 # our @EXPORT_OK = ( 'NO_BINNING', 'LIN_BINNING', 'LOG_BINNING');
