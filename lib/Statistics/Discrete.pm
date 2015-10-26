@@ -23,21 +23,23 @@
 
 package Statistics::Discrete;
 
-
-use 5.014002;
+use 5.012;
 use strict;
 use warnings;
 use List::Util;
 use POSIX;
 use Storable 'dclone';
 
-
-
 our $VERSION = '0.05';
 
-use constant NO_BINNING   => 0;
-use constant LIN_BINNING  => 1;
-use constant LOG_BINNING  => 2;
+# require Exporter;
+# our @EXPORT_OK = ( 'NO_BINNING', 'LIN_BINNING', 'LOG_BINNING');
+
+use constant {
+  NO_BINNING   => 0,
+  LIN_BINNING  => 1,
+  LOG_BINNING  => 2,
+};
 
 use constant LOG_BASE => 10;
 use constant DEFAULT_BINS_NUMBER => 10;
@@ -176,7 +178,7 @@ sub minimum {
   if(!defined($self->{"stats"}{"Desc"}{"min"})) {
     my $count = $self->count();
     if($count > 0) {
-      $self->{"stats"}{"Desc"}{"min"} = List::Util::min(keys $self->{"data_frequency"});
+      $self->{"stats"}{"Desc"}{"min"} = List::Util::min(keys %{$self->{"data_frequency"}});
     }
     else {
       $self->{"stats"}{"Desc"}{"min"} = 0;
@@ -193,7 +195,7 @@ sub maximum {
   if(!defined($self->{"stats"}{"Desc"}{"max"})) {
     my $count = $self->count();
     if($count > 0) {
-      $self->{"stats"}{"Desc"}{"max"} = List::Util::max(keys $self->{"data_frequency"});
+      $self->{"stats"}{"Desc"}{"max"} = List::Util::max(keys %{$self->{"data_frequency"}});
     }
     else {
       $self->{"stats"}{"Desc"}{"max"} = 0;
